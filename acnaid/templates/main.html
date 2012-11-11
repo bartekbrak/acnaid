@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load menu_tags cms_tags i18n %}
+
+{% block main %}
+		<header>
+			<div class="container">
+				<h1>{% trans "ACNAID SZYBKO-PRECYZYJNIE-SKUTECZNIE" %}</h1>
+				<nav>
+					<ul>
+						{% show_menu %}
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<section id="main">
+			<div class="container">
+				<section id="promo">
+					<ul>
+						{% placeholder "slides" %}
+					</ul>
+					<div class="pagination"></div>
+                    <p>
+                        {% trans "Pierwsza gotowa formulacja <br />4% H2O2 nadtleneku wodoru + 0,5% kwasu salicylowego <br />4% D-Panthenol" %}
+                    </p>
+                </section>
+                <section id="lines">
+                    <h4>
+                        {% trans "Klucz do sukcesu w profilkatyce i terapii trądziku" %}
+                    </h4>
+					<ul>
+						<li id="l-15"><a href="#"><p><strong>{% trans "Linia 15+" %}</strong><br />{% trans "opis linii 15+ na indeksie" %}</p></a></li>
+						<li id="l-30"><a href="#"><p><strong>{% trans "Linia 30+" %}</strong><br />{% trans "opis linii 30+ na indeksie" %}</p></a></li>
+					</ul>
+				</section>
+			</section>
+			{# ?? #}
+			{# </div> #}
+
+	
+{% endblock main %}

@@ -1,0 +1,49 @@
+{% load cms_tags sekizai_tags i18n %}
+<!DOCTYPE html>
+<html lang="pl" id="{{ current_page.reverse_id }}" class="{% block body_class %}{% endblock body_class %}">
+	<head>
+		<meta charset="utf-8" />
+		<title>ACNAID</title>
+		<meta name="description" content="Site description" />
+		<meta name="keywords" content="Site keywords" />
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" />
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+		{% render_block "css" %}
+		<!--[if lte IE 7]><link rel="stylesheet" href="{{ STATIC_URL }}css/ie-fixes.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" />
+	</head>
+	<body>
+{% block main %}
+	
+{% endblock main %}
+		<footer>
+			<div class="container">
+				<ul id="logos">
+					<li id="derma"><a href="#">derma profil</a></li>
+					<li id="boderm"><a href="#">boderm</a></li>
+				</ul>
+				<p><span>{% trans "Wylączny dystrybutor:" %}</span><br />
+					<strong>{% trans "DermaProfil Sp. z o.o." %}</strong><br />
+					{% trans "ul. Grochowska 278/403, 03-841 Warszawa" %}
+				</p>
+				<nav>
+					<ul>
+						<li><a href="#">Kontakt</a></li>
+						<li><a href="#">Jak kupić?</a></li>
+					</ul>
+				</nav>
+				<ul id="copyrights">
+					<li><a href="#">{% trans "Regulamin" %}</a></li>
+					<li><a href="#">{% trans "Copyright" %}</a></li>
+					<li id="acnaid"><a href="#">ACNAID</a></li>
+					<li id="hint"><a href="#">Hint</a></li>
+				</ul>
+			</div>
+		</footer>
+		<script src="{{ STATIC_URL }}js/jquery-1.8.2.min.js"></script>
+		<script src="{{ STATIC_URL }}js/jquery.carouFredSel-6.1.0-packed.js"></script>
+		<script src="{{ STATIC_URL }}js/main.js"></script>
+        {% render_block "js" %}
+	</body>
+</html>

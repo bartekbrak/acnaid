@@ -1,0 +1,5 @@
+tmp/
+*pyc
+site_media/
+settings_local.py
+_env

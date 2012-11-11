@@ -1,0 +1,6 @@
+{% load menu_tags %}
+{% for child in children %}
+<li id="main_menu_{{ forloop.counter }}_element" class="{% if child.selected %}selected{% endif %}">
+	<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+</li>
+{% endfor %}

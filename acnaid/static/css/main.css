@@ -1,0 +1,173 @@
+﻿/**
+ * @fileoverview Cascading style sheet for ACNAID
+ * @author Igor Springer www.frontdeveloper.pl
+ */
+body, input, select, textarea, button {font:normal 400 1em Arial, Helvetica sans-serif;color:#0D4A79;}
+body {min-width:1000px;height:100%;background:#FFF;}
+	.container {margin:0 auto;width:1000px;position:relative;}
+	#index .container {margin:0 auto;width:1000px;position:relative;}
+	.container:after {content:".";display:block;height:0;clear:both;visibility:hidden;font-size:0;} 
+	a:hover {text-decoration:none;}
+	
+	@font-face {
+    font-family: 'arial_narrowregular';
+    src: url('../fonts/arialn-webfont.svg#arial_narrowregular') format('svg');
+    src: url('../fonts/arialn-webfont.eot');
+    src: url('../fonts/arialn-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/arialn-webfont.woff') format('woff'),
+         url('../fonts/arialn-webfont.ttf') format('truetype');         
+    font-weight: normal;
+    font-style: normal;
+	}
+	
+	header {background:url(../images/header.png) repeat-x #E6F4FD;height:114px;position:relative;}
+	#index header {height:124px;}
+		#index header .container {background:url(../images/index-header-bg.jpg) no-repeat 50% 0;height:100%;}
+			header #header-bg {width:160px;height:116px;position:absolute;background:url(../images/header-bg.jpg);top:0;left:0;margin-left:-103px;}
+			header h1 {margin:20px 0 0 60px;text-indent:-999em;display:block;background:url(../images/acnaid.png);width:226px;height:73px;float:left;}
+			#index header h1 {margin-left:0;}
+			header nav {float:right;margin-top:45px;}
+				header nav ul {}
+					header nav ul li {float:left;margin-left:25px;}
+						header nav ul li a {text-transform:uppercase;color:#589339;font-size:1.3125em;font-family:'arial_narrowregular';}
+							header nav ul li a:hover {color:#ec018c;}
+	
+	#main {position:relative;background:#e3f4fc;}
+		#main-bg {position:absolute;background:url(../images/main.png) 0 -4px no-repeat #E3F4FC;top:0;left:50%;width:420px;height:100%;margin-left:-710px;}
+		#main .container {height:100%;}
+		#acnaid-30 h2 {font-size:1.5em;margin:0 0 0 300px;width:460px;float:right;margin:45px 50px 0 0;}
+		#acnaid-30 h3 {color:#FFF;font-size:1.125em;float:right;width:605px;margin-top:60px;}
+		#acnaid-30 p.info {float:left;font-size:1.125em;font-weight:700;color:#FFF;margin:280px 0 0 50px;width:315px;}
+		#acnaid-30 #ingredients {clear:left;float:left;margin:20px 0 0 50px;list-style:none;width:315px;font-size:.8125em;font-weight:700;}
+			#acnaid-30 #ingredients li {margin-bottom:20px;}
+		#acnaid-30 .buy, #acnaid-30 .ask {right:300px;bottom:120px;display:block;text-indent:-999em;background:url(../images/acnaid.png) 0 -700px;width:266px;height:70px;position:absolute;}
+		#acnaid-30 .buy {background-position:0 -767px;right:0px;}
+		#acnaid-15 #main .container {background:url(../images/acnaid15-main.jpg) no-repeat 0 -3px;height:100%;height:850px;}
+		#acnaid-30 #main .container {background:url(../images/acnaid30-main.jpg) no-repeat 0 -3px;height:100%;height:850px;}
+	#index #main {padding-top:20px;background:url(../images/index-main.jpg) no-repeat 50% 0 #E3F4FC;height:466px;}
+		#index #main #promo {width:50%;float:left;position:relative;}
+			#index #main #promo .pagination {position:absolute;top:280px;right:85px;}
+				#index #main #promo .pagination a {float:left;margin-right:10px;display:block;background:url(../images/acnaid.png) -60px -380px;width:47px;height:25px;text-indent:-999em; }
+				#index #main #promo .pagination a.selected {background-position:-120px -380px;}
+			#index #main #promo ul {list-style:none;margin-left:60px;}
+			#index #main #promo p {font-size:1.25em;line-height:1.2em;font-family:'arial_narrowregular';margin-top:75px;}
+				#index #main #promo ul li {float:left;}
+					#index #main #promo ul img, #index #main #promo ul .description {float:left;}
+					 #index #main #promo ul .description {margin-top:60px;width:250px;}
+						#index #main #promo ul .description p {font-size:.8125em;line-height:1.3em;margin-top:10px;font-family:Arial;}
+					#index #main #promo ul img {margin-right:70px;}
+					#index #main #promo ul li h2 {float:left;width:auto;display:block;text-indent:-999em;background:url(../images/acnaid.png) 0 -650px;width:238px;height:38px;margin-bottom:15px;}	
+					#index #main #promo ul li h3 {font-size:1.0625em;}
+		#index #main #lines {width:48%;float:right;}
+			#index #main #lines ul {list-style:none;margin:90px 0 0 158px;}
+				#index #main #lines ul  li {display:block;background:url(../images/acnaid.png) -4px -444px;width:323px;height:95px;}
+					#index #main #lines ul  li a {width:100%;height:100%;display:block;color:#0d4a79;}
+					#index #main #lines ul  li p {width:160px;font-size:.8125em;padding:5px 0 0 110px}
+					#index #main #lines ul  li#l-15 p {padding-top:10px;}
+					#index #main #lines ul  li p strong {font-size:1.1538em;}
+				#index #main #lines ul li#l-30 {background-position:-8px -553px;margin-top:139px;}
+		#main #lines {}
+			#main #lines h4 {text-transform:uppercase;font-weight:400;text-align:center;font-size:1.125em;font-family:'arial_narrowregular';}
+	footer {background:url(../images/footer.png) repeat-x #FFF;height:205px;margin-bottom:10px;position:relative;}
+	#index footer {background:url(../images/index-footer.png) repeat-x #FFF;height:190px;}
+		footer #footer-bg {background:url(../images/footer-bg.png) no-repeat 0 0;width:429px;height:100%;position:absolute;top:0;left:50%;margin-left:-707px;}
+		#index footer .container {height:100%;background:url(../images/index-footer-bg.png) no-repeat 50% 0;}
+			footer #logos {float:left;margin:30px 0 0 60px;}
+				footer #logos li {display:block;text-indent:-999em;background:url(../images/acnaid.png) -269px -120px;width:90px;height:47px;}
+				#index footer #logos  {margin-left:0px;}
+				footer #logos #boderm {background-position:-269px -196px;height:30px;margin-top:20px;}
+			footer p {margin-left:20px;color:#FFF;font-size:.875em;padding-top:35px;float:left;}
+				footer p span {line-height:2em;}
+			footer nav {margin-top:40px;float:right;font-weight:700;padding-bottom:25px;margin-bottom:25px;border-bottom:2px solid #FFF;font-size:1.25em;}
+				footer nav ul li, footer #copyrights li {float:left;text-transform:uppercase;}
+				footer nav ul li {margin-left:40px;}
+			footer #copyrights {clear:right;float:right;list-style:none;}
+				footer #copyrights li {line-height:2em;font-size:.675em;margin-left:15px;}
+				footer ul li a {color:#FFF;}
+				footer ul li#acnaid, footer ul li#hint {display:block;background:url(../images/acnaid.png) -270px -226px;width:76px;height:20px;text-indent:-999em;}
+				footer ul li#acnaid a, footer ul li#hint a, footer #logos li a {width:100%;height:100%;display:block;}
+				footer ul li#hint {background-position:-364px -226px;width:52px;}
+				
+/* product visual */
+	.products {list-style:none;position:absolute;top:415px;right:0;}
+	#acnaid-30 #main .products {top:515px;right:30px;}
+		#main .products li {width:140px;float:left;margin-left:35px;}
+		#acnaid-30 .products li {margin-left:60px;}
+			#main .products li p {font-size:.875em;color:#ec018c;}
+			#acnaid-30 #main .products li p {font-size:.8125em;color:#0A4776}
+			#main .products li h2 {margin:0;float:left;margin-bottom:5px;display:block;text-indent:-999em;background:url(../images/acnaid.png) -226px 0;width:108px;height:23px;}
+			#main .products li#liquid h2 {background-position:-226px -24px;width:142px;}
+			#main .products li#cleanser h2 {background-position:-225px -49px;width:129px;}
+	#like-us {position:absolute;top:412px;left:72px;list-style:none;position:relative;}
+		#like-us li {float:left;width:90px;margin-right:18px;position:relative;}
+			#like-us li img {border:2px double #FFF;}
+		#like-us li.hovered img.thumb, #like-us li:hover img.thumb {border:2px double #ec018c;}
+		#like-us li#l-2.hovered img.thumb, #like-us li#l-2:hover img.thumb {border:2px double #0d4b7a;}	
+		#like-us li#l-3.hovered img.thumb, #like-us li#l-3:hover img.thumb {border:2px double #5a923b;}
+		#like-us li#l-4.hovered img.thumb, #like-us li#l-4:hover img.thumb {border:2px double #cdff0a;}
+		#like-us li.last {margin-right:0;}
+		#like-us li .triangle {display:none;position:absolute;bottom:-22px;left:38%;background:url(../images/acnaid.png) 0 -75px;width:19px;height:11px;}
+		#like-us li.hovered .triangle {display:block;}
+		#like-us li p {font-size:.625em;color:#5d5d5d;margin-top:5px;}
+		#like-us .description {display:none;padding:10px 10px 25px 10px;position:absolute;bottom:-285px;left:-9px;background: url(../images/description.jpg) 350px 170px no-repeat #FFF;border:1px solid #9fa0a2;width:673px;}
+		#like-us #l-2 .description {left:-117px;}
+		#like-us #l-3 .description {left:-224px;}
+		#like-us #l-4 .description {left:-333px;}
+				#like-us .description .info {float:left;margin-right:20px;}
+					#like-us .description .info p {font-size:.6875em;}
+				#like-us .description p {color:#0a4776;}
+				#like-us .description .quote {margin-top:30px;font-size:.75em;float:left;width:250px;margin-right:50px;}
+			#like-us .description .choise {float:left;font-size:1.2em;position:relative}
+				#like-us .description .choise img {position:absolute;right:-118px;top:18px;}
+			#like-us .description .choise p strong {font-size:1.0833em;}
+			#like-us a.buy {position:absolute;bottom:15px;right:10px;display:block;width:210px;height:26px;padding:10px 0;background:#ccff0a;text-align:center;color:#e44468;font-weight:700;font-size:1.1em;}
+			
+/* product details */
+	#acnaid-15-details #main {background:url(../images/acnaid15-bg.jpg) 100% 100% no-repeat #E3F4FC;}
+	#acnaid-30-details #main {background:url(../images/acnaid30-bg.jpg) 100% 100% no-repeat #E3F4FC;}
+	.product #main {position:relative;min-height:1080px;}
+		.product #main #product-details {width:690px;float:left;position:relative;}
+			.product #main h2 {margin-bottom:40px;display:block;text-indent:-999em;width:100%;height:161px;background:url(../images/acnaid15-top.jpg)  0 -1px no-repeat;}
+			#acnaid-30-details.product #main h2 {background:url(../images/acnaid30-top.jpg) no-repeat 0 -1px;}
+			.product #main .buy {display:block;background: url(../images/acnaid.png) 134px -377px #FFF;padding:10px 20px 10px 0;font-size:1.2em;color:#ec018c;width:150px;height:32px;font-weight:700;position:absolute;right:0;top:190px;text-align:center;line-height:1.5em;}
+			.product #main #product-details h3 {margin-left:45px;font-size:1em;font-weight:400;font-size:1.125em;}
+			.product #main #product-details h3 strong {font-size:2em;color:#ec008c;font-weight:400;}
+			.product #main #product-details .entry-text {font-size:1em;line-height:1.2em;margin-bottom:20px;}
+			.product #main #product-details  .capacity {font-size:.9375em;display:block;margin-bottom:20px;}
+			.product #main #product-details #box-wrapper {width:100%;}
+				.product #main #product-details  .box {width:274px;float:left;clear:left;}
+				.product #main #product-details  .left {margin-left:45px;float:left;}	
+				.product #main #product-details  .right {margin-right:45px;float:right;}						
+					.product #main #product-details  .box .content {overflow:hidden;font-size:.875em;background: url(../images/gradient-blue.png) 0 10% no-repeat;padding:0 20px 20px 20px;}
+					.product #main #product-details  .box p {margin-left:0;}	
+					.product #main #product-details  .box h4 {font-weight:400;font-size:1.125em;background: url(../images/box-h2.png) no-repeat;height:30px;padding:20px 20px 0 20px;display:block;}	
+			.product #main #product-details span, .product #main #product-details p {margin-left:45px;font-size:.9285em;}
+	.product aside {float:right;background:url(../images/gel.png) no-repeat 50% 30px;width:310px;padding-top:400px;}		
+		.product aside .see-other {margin-left:10px;background:url(../images/gradient-white.jpg) no-repeat;padding:10px 15px;}
+			.product aside .see-other ul {list-style:none;margin-left:15px;}
+				.product aside .see-other ul li {padding-left:20px;background:url(../images/acnaid.png) 0 -332px;}
+					.product aside .see-other ul li a {color:#0d4a79}
+						.product aside .see-other ul li a:hover {color:#ec018c;}
+				.product aside .see-other strong {color:#58923d;display:inline-block;margin-bottom:10px;font-size:1.125em;}
+		.product aside .learn-more {float:right;text-indent:-999em;display:block;background:url(../images/acnaid.png) 0 -119px;width:265px;height:87px;}
+		#acnaid-30-details.product aside .learn-more {background-position: 0 -205px;height:80px;}
+
+/* products list */
+	#main h2.page-title {float:left;margin:30px 0 10px 0;font-size:2.25em;margin-left:80px;font-weight:400;}
+	#main #products-list {clear:left;ist-style:none;margin-left:90px;overflow:hidden;}
+	#main .li-product {overflow:hidden;width:910px;background:url(../images/product-gradient.jpg) 0 100% no-repeat;margin-bottom:20px;padding-bottom:10px;}
+		#main .li-product .desc {font-size:1.125em;display:block;width:880px;padding:10px 0 10px 30px;background:url(../images/product-gradient-top.jpg) no-repeat;}
+		#main .li-product article {padding:0 10px 0 30px;}
+			#main .li-product .desc span {font-size:.833em;}
+			#main .li-product h3 {font-size:2em;color:#ec018c;font-weight:400;}
+			#main .li-product h4 {font-size:1.125em;font-weight:400;margin-bottom:10px;}
+			#main .li-product .more {color:#0d4a79;float:right;padding-left:20px;background:url(../images/acnaid.png) 0 -332px;}
+			#main .li-product article {float:left;width:60%;margin-right:15%;}
+				#main .li-product article p {font-size:.875em;}
+			#main .li-product img {float:left;margin-top:-20px;}
+
+/* developer's {tu-br} extension */
+#index #main_menu_1_element,
+#index #main_menu_2_element {
+	display: none;
+}
