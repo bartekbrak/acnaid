@@ -1,0 +1,8 @@
+U=my_9432a
+DB=my_9432
+P=fi0LeOQxG232
+#mysql -u my_9432a -h hint1.megivps.pl my_9432 --password=fi0LeOQxG232 > ~/dumps/acnaid.sql
+
+#mysql -u ${U} -h hint1.megivps.pl ${DB} --password=${P}
+
+#mysql -u root ${DB} < ~/dumps/acnaid.sql
