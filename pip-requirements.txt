@@ -12,3 +12,4 @@ django-sekizai==0.6.1
 gunicorn==0.13.4
 html5lib==0.95
 wsgiref==0.1.2
+django-translatable==0.1.1

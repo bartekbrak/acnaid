@@ -2,9 +2,10 @@
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
 from django.utils.translation import ugettext_lazy as _
-from models import Slide, Product
+from django.db.models import TextField
+from models import Slide, Product, LikesCmsPlugin
 from forms import ProductAdminForm
-
+from cms.plugins.text.widgets.wymeditor_widget import WYMEditor
 
 
 class SliderImage(CMSPluginBase):
@@ -30,7 +31,21 @@ class SliderImage(CMSPluginBase):
 
 plugin_pool.register_plugin(SliderImage)
 
+class LikesPlugin(CMSPluginBase):
+    model = LikesCmsPlugin
+    name = _("Likes")
+    render_template = 'cms/plugins/likes.html'
+    formfield_overrides = {
+        TextField: {'widget': WYMEditor()},
+    }
 
+    def render(self, context, instance, placeholder):
+        context.update({
+            'instance': instance,
+        })
+        return context
+
+plugin_pool.register_plugin(LikesPlugin)
 
 
 class ProductPlugin(CMSPluginBase):

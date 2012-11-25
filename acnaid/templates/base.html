@@ -1,4 +1,4 @@
-{% load cms_tags sekizai_tags i18n %}
+{% load menu_tags cms_tags sekizai_tags i18n metatags %}
 <!DOCTYPE html>
 <html lang="pl" id="{{ current_page.reverse_id }}" class="{% block body_class %}{% endblock body_class %}">
 	<head>
@@ -8,42 +8,69 @@
 		<meta name="keywords" content="Site keywords" />
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" />
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+		{% meta_tags %}
+		<style type="text/css">{% placeholder "extra_css" inherit %}</style>
 		{% render_block "css" %}
 		<!--[if lte IE 7]><link rel="stylesheet" href="{{ STATIC_URL }}css/ie-fixes.css" /><![endif]-->
 		<!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 		<link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" />
+		<script src="{{ STATIC_URL }}js/jquery-1.8.2.min.js"></script>
+		<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+		<script src="{{ STATIC_URL }}js/jquery.carouFredSel-6.1.0-packed.js"></script>
+		<script src="{{ STATIC_URL }}js/main.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}js/swfobject.js"></script>
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-36380473-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>		
+
+	
 	</head>
-	<body>
+	<body id="body_{% block tpl_id %}base{% endblock tpl_id %}">
+<header>
+    <div class="container">
+        <div id="header-bg"></div>
+        <a href="/" class="logo">ACNAID SZYBKO-PRECYZYJNIE-SKUTECZNIE</a>
+        <nav>
+            <ul>
+                {% show_menu %}
+            </ul>
+        </nav>
+    </div>
+</header>		
 {% block main %}
 	
 {% endblock main %}
 		<footer>
 			<div class="container">
 				<ul id="logos">
-					<li id="derma"><a href="#">derma profil</a></li>
-					<li id="boderm"><a href="#">boderm</a></li>
+					<li id="derma"><a href="http://dermaprofil.com.pl/">derma profil</a></li>
+					<li id="boderm"><a href="http://www.boderm.com/">boderm</a></li>
 				</ul>
-				<p><span>{% trans "Wylączny dystrybutor:" %}</span><br />
-					<strong>{% trans "DermaProfil Sp. z o.o." %}</strong><br />
-					{% trans "ul. Grochowska 278/403, 03-841 Warszawa" %}
-				</p>
+					{% placeholder "footer_address" inherit %}
 				<nav>
 					<ul>
-						<li><a href="#">Kontakt</a></li>
-						<li><a href="#">Jak kupić?</a></li>
+						<li><a href="{% page_url "contact" %}">Kontakt</a></li>
+						<li><a href="{% page_url "stores" %}">Jak kupić?</a></li>
 					</ul>
 				</nav>
 				<ul id="copyrights">
-					<li><a href="#">{% trans "Regulamin" %}</a></li>
-					<li><a href="#">{% trans "Copyright" %}</a></li>
-					<li id="acnaid"><a href="#">ACNAID</a></li>
-					<li id="hint"><a href="#">Hint</a></li>
+					<li id="tc_link"><a href="{% page_url "tc" %}">Regulamin</a></li>
+					<li><a>Copyright</a></li>
+					<li id="acnaid"><a>ACNAID</a></li>
+					<li id="hint"><a href="http://hint.pl">Hint</a></li>
 				</ul>
 			</div>
 		</footer>
-		<script src="{{ STATIC_URL }}js/jquery-1.8.2.min.js"></script>
-		<script src="{{ STATIC_URL }}js/jquery.carouFredSel-6.1.0-packed.js"></script>
-		<script src="{{ STATIC_URL }}js/main.js"></script>
-        {% render_block "js" %}
+    {% render_block "js" %}
+    {% block extra_js %}{% endblock extra_js %}
 	</body>
 </html>

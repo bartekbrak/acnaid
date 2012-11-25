@@ -25,18 +25,31 @@ class Slide(CMSPlugin):
         return "<empty>"
 
 class Product(CMSPlugin):
-    """used on index of prducts page"""
+    """used on index of products page"""
 
     image = models.ImageField(_("image"), upload_to=CMSPlugin.get_media_path)
     broad_description = models.CharField(_("broad description"), max_length=255, blank=True, null=True)
     broad_description_sub = models.CharField(_("broad description subtitle"), max_length=255, blank=True, null=True)
-    name = models.CharField(_("product name"), max_length=255, blank=False, null=False)
-    name_subtitle = models.CharField(_("product subtitle"), max_length=255, blank=False, null=False)
+    name = models.CharField(_("product name"), max_length=255)
+    name_subtitle = models.CharField(_("product subtitle"), max_length=255)
     description = models.TextField(_("description"), max_length=255 * 10, blank=True, null=True, help_text='No longer than 100 words.')
-    page_link = models.ForeignKey(Page, verbose_name=_("page"), blank=False, null=False, limit_choices_to={'publisher_is_draft': True})
+    page_link = models.ForeignKey(Page, verbose_name=_("page"), limit_choices_to={'publisher_is_draft': True})
 
     def __unicode__(self):
         return self.name
 
 
+class LikesCmsPlugin(CMSPlugin):
+    """TD"""
 
+    thumb = models.ImageField(_("thumb"), upload_to=CMSPlugin.get_media_path)
+    sub = models.CharField(_("subtitle"), max_length=255, help_text='HTML tags allowed.')
+    image = models.ImageField(_("image"), upload_to=CMSPlugin.get_media_path)
+    description = models.TextField(_("description"), max_length=255 * 4, help_text='HTML tags allowed.')
+    quote = models.CharField(_("quote"), max_length=255 * 10, help_text='HTML tags allowed.')
+    chose = models.TextField(_("chose"), max_length=255 * 10, help_text='HTML tags allowed.')
+    product_image = models.ImageField(_("product image"), upload_to=CMSPlugin.get_media_path)
+    page_link = models.ForeignKey(Page, verbose_name=_("page"), limit_choices_to={'publisher_is_draft': True})
+
+    def __unicode__(self):
+        return self.sub

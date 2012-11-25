@@ -1,27 +1,11 @@
-{% extends "base.html" %}
+{% extends "general.html" %}
 {% load menu_tags cms_tags i18n %}
 
-{% block main %}
-        <header>
-            <div class="container">
-            <div id="header-bg"></div>
-                <h1>{% trans "ACNAID SZYBKO-PRECYZYJNIE-SKUTECZNIE" %}</h1>
-                <nav>
-                    <ul>
-                        {% show_menu %}
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <section id="main">
-            <div id="main-bg"></div>
-            <div  class="container">
-                <h2 class="page-title">{% trans "Produkty ACNAID" %}</h2>
-                <ul id="products-list">
-                    {% placeholder "list_of_products" or %}
-                        No product found. Fill in this section in admin, please.
-                    {% endplaceholder  %}
-                </ul>
-            </div>
-        </section>
-{% endblock main %}    
+{% block content %}
+<h2 class="page-title">Produkty ACNAID</h2>
+<ul id="products-list">
+    {% placeholder "list_of_products" or %}
+        No product found. Fill in this section in admin, please.
+    {% endplaceholder  %}
+</ul>
+{% endblock content %}    

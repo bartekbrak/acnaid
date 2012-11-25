@@ -3,66 +3,33 @@
 
 {% block body_class %}product{% endblock body_class %}
 {% block main %}
-<header>
-    <div class="container">
-    <div id="header-bg"></div>
-        <h1>{% trans "ACNAID SZYBKO-PRECYZYJNIE-SKUTECZNIE" %}</h1>
-        <nav>
-            <ul>
-                {% show_menu %}
-            </ul>
-        </nav>
-    </div>
-</header>
 <section id="main">
     <div id="main-bg"></div>
     <div  class="container">
         <article id="product-details">
             <h2>{% placeholder "invisible_visual_description" or %}Sięgnij już dziś po klucz do sukcesu w profilaktyce i terapii trądziku.{% endplaceholder %}</h2>
-            <a href="#" class="buy">{% trans "jak kupić?" %}</a>
+            <a href="{% page_url "stores" %}" class="buy">jak kupić?</a>
             <h3>{% placeholder "broad_description" %}<br /> <strong>{% placeholder "name" %}</strong></h3>
             <span class="capacity">{% placeholder "name_subtitle" %}</span>
             <p class="entry-text">{% placeholder "description" %}</p>
             <div id="box-wrapper">
                 <div class="left">
-                    <div class="box">
-                        <h4>{% placeholder "left_column_heading_1" %}</h4>
-                        <div class="content">
-                            {% placeholder "left_column_1" %}
-                        </div>
-                    </div>
-                    <div class="box">
-                        <h4>{% placeholder "left_column_heading_2" %}</h4>
-                        <div class="content">
-                            {% placeholder "left_column_2" %}
-                        </div>
-                    </div>
+                    {% placeholder "left_column_boxes" %}
                 </div>
                 <div class="right">
-                    <div class="box">
-                        <h4>{% placeholder "right_column_heading_1" %}</h4>
-                        <div class="content">
-                            {% placeholder "right_column_1" %}
-                        </div>
-                    </div>
-                    <div class="box">
-                        <h4>{% placeholder "right_column_heading_2" %}</h4>
-                        <div class="content">
-                            {% placeholder "right_column_2" %}
-                        </div>
-                    </div>
+                    {% placeholder "right_column_boxes" %}
                 </div>
             </div>
+            {% placeholder "below_columns" %}
         </article>
     <aside>
         <div class="see-other">
-            <strong>Zobacz pozostale produkty</strong>
-            <ul>
-                <li><a href="#">ACNAID Gel-PoinGel</a></li>
-                <li><a href="#">ACNAID Liquid Soap</a></li>
-            </ul>
+            <strong>Zobacz pozostałe produkty</strong>
+            {% placeholder "see-other-links" %}
         </div>
-        <a href="#" class="learn-more">dowiedz się więcej</a>
+        <div id="learn-more-link">
+            {% placeholder "learn-more-link" %}
+        </div>
     </aside>
     </div>
 </section>    

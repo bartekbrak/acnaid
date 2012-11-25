@@ -61,6 +61,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'django.contrib.localflavor',  # so distribution points have pl names
     
     'acnaid',  # should be before cms to allow template overrides
     
@@ -84,10 +85,20 @@ INSTALLED_APPS = (
     'rosetta',
     'cmsplugin_plaintext',
 
+    # from oliprox & dermaprofil
+    'faq',
+    'metatags',
+    'stores',
+    'contact',
+    'news',
+
     # my own
     'cms_extensions',
 
 )
+
+# links to oliprox stores
+DATABASE_ROUTERS = ['stores.dbrouters.StoresDbRouter'] 
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -103,3 +114,5 @@ from settings_local import *
 from cms_settings import *
 
 SECRET_KEY = 't6n)lywk$#c2_8xxd8ys(-(_5(hqx4-=hq(-(13iik5vo$qyvh'
+
+CMS_SEO_FIELDS = True
