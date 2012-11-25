@@ -1,0 +1,78 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-10 15:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: cms_app.py:7
+msgid "Stores list"
+msgstr "Lista aptek"
+
+#: forms.py:9 templates/stores/index.html:32
+msgid "Voivodeship"
+msgstr "województwo"
+
+#: forms.py:17
+msgid "Postal code"
+msgstr "Kod pocztowy"
+
+#: models.py:9 models.py:35
+msgid "name"
+msgstr "nazwa"
+
+#: models.py:10
+msgid "slug"
+msgstr "etykieta"
+
+#: models.py:12 models.py:30
+msgid "voivodeship"
+msgstr "województwo"
+
+#: models.py:15
+msgid "Locality"
+msgstr "Miejscowość"
+
+#: models.py:16
+msgid "Localities"
+msgstr "Miejscowości"
+
+#: models.py:37
+msgid "address"
+msgstr "adres"
+
+#: models.py:38
+msgid "phone"
+msgstr "telefon"
+
+#: models.py:39
+msgid "postal code"
+msgstr "kod pocztowy"
+
+#: models.py:40
+msgid "locality"
+msgstr "miejscowość"
+
+#: models.py:43
+msgid "Store"
+msgstr "Apteka"
+
+#: models.py:44
+msgid "Stores"
+msgstr "Apteki"
+
+#: templates/stores/index.html:20
+msgid "Choose <strong>voivodeship</strong>:"
+msgstr "Wybierz <strong>województwo</strong>:"
+
+#: templates/stores/index.html:42
+msgid "List of pharmacies"
+msgstr "Lista aptek"

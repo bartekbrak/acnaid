@@ -1,0 +1,22 @@
+{% extends "general.html" %}
+{% load i18n cms_tags menu_tags %}
+
+{% block title %}{% trans "News [plural]" %} - {{ PROJECT_DETAILS.title }}{% endblock %}
+
+{% block content %}
+<div class="left_column">
+    <div class="news_item">
+        <div class="details">
+            {{ news.date|date:"j.m.Y" }}
+        </div>
+        <h3>{{ news.get_title }}</h3>
+        <p>
+            {{ news.get_translation.content|safe }}
+        </p>
+        <a href="#" onclick="history.go(-1)" class="button">powrót</a>
+    </div>
+</div>
+<div class="right_column">
+    {% placeholder "right_column" %}
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% if subject.has_translation %}
+    <div class="cms-plugin-faq">
+        <h{{ heading_level }}>{{ subject.get_translation.title }}</h{{ heading_level }}>
+        <dl>
+            {% for question in subject.questions.all %}
+                {% if question.has_translation %}
+                    <dt id="cms-plugin-faq-question-{{ plugin.id }}_{{ question.id }}">{{ question.get_translation.question }}</dt>
+                    <dd id="cms-plugin-faq-answer-{{ plugin.id }}_{{ question.id }}">{{ question.get_translation.answer }}</dd>
+                {% endif %}
+            {% endfor %}
+        </dl>
+    </div>
+    <script type="text/javascript">
+        var CMS_PLUGIN_FAQ_JSDEFINED;
+        $(function(){
+            if (CMS_PLUGIN_FAQ_JSDEFINED !== undefined)
+                return;
+            CMS_PLUGIN_FAQ_JSDEFINED = true;
+            $(".cms-plugin-faq").addClass("js-active");
+            $(".cms-plugin-faq dd").hide();
+            $(".cms-plugin-faq dt").toggle(function(event){
+                var id = $(event.currentTarget).attr("id").split('-').pop();
+                $(event.currentTarget).addClass("open");
+                $("#cms-plugin-faq-answer-" + id).slideDown(200); 
+            }, function(event){
+                var id = $(event.currentTarget).attr("id").split('-').pop();
+                $(event.currentTarget).removeClass("open");
+                $("#cms-plugin-faq-answer-" + id).slideUp(200); 
+            });
+        });
+    </script> 
+{% endif %}

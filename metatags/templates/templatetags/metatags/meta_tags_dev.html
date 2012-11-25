@@ -1,0 +1,13 @@
+{% for tag in tags %}
+    {% if tag.name|lower == "description" %}
+        {% if request.current_page.get_meta_description %}
+            <meta name="{{ tag.name }}" content="{{ request.current_page.get_meta_description }}">
+        {% else %}
+            <meta name="{{ tag.name }}" content="{{ tag.value }}">
+        {% endif %}
+    {% else %}{% if tag.name|lower == "keywords" %}
+        <meta name="{{ tag.name }}" content="{{ tag.value }}{% if request.current_page.get_meta_keywords %}, {{ request.current_page.get_meta_keywords }}{% endif %}">
+    {% else %}
+        <meta name="{{ tag.name }}" content="{{ tag.value }}">
+    {% endif %}{% endif %}
+{% endfor %}

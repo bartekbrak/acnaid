@@ -1,0 +1,46 @@
+{% extends "general.html" %}
+{% load cms_tags menu_tags i18n %}
+
+{% block tpl_id %}stores{% endblock tpl_id %}
+{% block extra_js %}
+
+    <script type="text/javascript" src="{{ STATIC_URL }}js/stores.js"></script>
+    <script type="text/javascript">$(function(){
+        STORES_CURRENT_VOIVODESHIP="{{ current_voivodeship|escapejs }}";
+        STORES_SV_URL="{% filter escapejs %}{% url stores.get_localities %}{% endfilter %}";
+        STORES_SL_URL="{% filter escapejs %}{% url stores.get_stores %}{% endfilter %}";
+        VOIVODESHIP={ {% for slug, name in voivodeships.items %}"{{ slug|escapejs }}":"{{ name|escapejs }}"{% if not forloop.last %},{% endif %}{% endfor %} };
+        select_locality("{{ default_locality|first|escapejs }}","{{ default_locality|last|escapejs }}");
+    });</script>
+{% endblock %}
+
+{% block content %}
+    <div class="voivodeships">
+        <h3>{% trans "Choose <strong>voivodeship</strong>:" %}</h3>
+	<div id="voivodeship-select"></div>
+	<script type="text/javascript">
+	    swfobject.embedSWF("{{ STATIC_URL }}flash/voivodeships.swf", "voivodeship-select", "360", "298", "9.0.25", false, {"menu":"true","quality":"high","allowScriptAccess":"always","base":"{{ STATIC_URL }}flash/"},{"wmode":"transparent"});
+	</script>
+    </div>
+    <div class="stores_content">
+        {# <ul class="breadcrumb">{% show_breadcrumb 0 "menu/breadcrumb.html" False %}</ul> #}
+        <h2 class="page-title">{% page_attribute "title" %}</h2>
+        {% placeholder "Content" %}
+    </div>
+    <div id="localities-list" class="localities">
+        <h3>{% trans "Voivodeship" %} <strong>{{ current_voivodeship_name }}</strong></h3>
+        <ul id="locality-select">
+            {% for locality in localities %}
+                <li id="localityselect-{{ locality.slug }}">{{ locality.name }}</li>
+            {% endfor %}
+        </ul>
+        <script type="text/javascript">$(function(){activate_locality_select();});</script>
+    </div>
+    <div class="clear"></div>
+    <div class="stores" id="stores-list" style="display: none;">
+        <h3>{% trans "List of pharmacies" %}: <strong></strong></h3>
+        <ul>
+        </ul>
+        <div class="clear"></div>
+    </div>
+{% endblock content %}

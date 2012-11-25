@@ -1,0 +1,13 @@
+{% load i18n cms_tags %}
+<div class="cms_plugin_news">
+    <h3><a href="{% page_url "news" "index" %}">{% trans "News" %}</a></h3>
+    <ul>
+        {% for n in news %}
+            <li>
+
+                <a href="{{ n.get_absolute_url }}" class="news_title">{{ n.get_translation.title }}</a>
+                <a href="{{ n.get_absolute_url }}"><p>{{ n.get_translation.content|truncatewords:"15" }}</p></a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

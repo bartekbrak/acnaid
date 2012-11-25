@@ -1,0 +1,28 @@
+{% extends "general.html" %}
+{% load i18n cms_tags menu_tags %}
+
+{% block title %}{% trans "News " %} - {{ PROJECT_DETAILS.title }}{% endblock %}
+
+{% block content %}
+<div class="left_column">
+    <h1>{% trans "News " %}</h1>
+    {% for news in news_page.object_list %}
+        {% if news.has_translation %}
+            <div class="news_item_on_index">
+                <div class="details">
+                    {{ news.date|date:"j.m.Y" }}
+                </div>
+                <h3><a href="{{ news.get_absolute_url }}">{{ news.get_title }}</a></h3>
+                <div class="news_content">
+                    {{ news.get_translation.content|striptags|truncatewords:"30" }}
+                </div>
+                <a href="{{ news.get_absolute_url }}" class="small_button">więcej</a>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <a href="#" onclick="history.go(-1)" class="button">{% trans "go back" %}</a>
+</div>
+<div class="right_column">
+    {% placeholder "right_column" %}
+</div>
+{% endblock content %}

@@ -1,0 +1,9 @@
+ids:
+    contact
+    how_to_buy
+    tc
+    stores
+
+    rg -oE "placeholder (\"|').*(\"|')" .
+    rg -Eo "class .*luginBase\)" .
+    rg -Eo "trans \".*\"" .

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load menu_tags cms_tags i18n %}
+
+{% block tpl_id %}general{% endblock tpl_id %}
+
+{% block main %}
+<section id="main">
+    <div id="main-bg"></div>
+    <div  class="container">
+        {% block content %}
+        <h2 class="page-title">{{ request.current_page }}</h2><br/>
+            <div id="left_column">{% placeholder "left_column" %}</div><!--
+         --><div id="right_column">{% placeholder "right_column" %}</div>
+        {% endblock content %}
+    </div>
+</section>
+{% endblock main %}    

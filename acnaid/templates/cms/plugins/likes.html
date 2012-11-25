@@ -1,0 +1,15 @@
+<li id="l-{{ plugin.counter }}">
+    <i class="triangle"></i><img class="thumb" src="{{ instance.thumb.url }}" alt="" /><p>{{ instance.sub|safe }}</p>
+    <div class="description">
+        <div class="info">
+            <img src="{{ instance.image.url }}" alt="" />
+            {{ instance.description|safe }}
+        </div>
+        <p class="quote">{{ instance.quote|safe }}</p>
+    <div class="choise">
+        {{ instance.chose|safe }}
+        <img src="{{ instance.product_image.url|safe }}" alt="" />
+    </div>
+    <a href="{{ instance.page_link }}" class="buy">zobacz gdzie kupić</a>
+    </div>
+</li>

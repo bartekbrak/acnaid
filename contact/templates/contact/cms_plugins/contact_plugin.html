@@ -1,0 +1,30 @@
+{% load i18n cms_tags %}
+<div id="cms-plugin-contact-{{ plugin.id }}" class="cms-plugin-contact">
+    <h3>{% trans "Get in touch:" %}</h3>
+    <br/>
+    <form action="{% page_url request.current_page %}" method="post" id='myform'>
+        <fieldset>
+            {% csrf_token %}
+            <div style="display: none;">
+                <input type="hidden" name="pid" value="{{ plugin.id }}" />
+            </div>
+            {{ form.content }}
+            {{ form.content.errors }}
+            {{ form.sender.label_tag }}
+            {{ form.sender }}
+            {{ form.sender.errors }}
+            {% if sent %}
+                <div class="success">
+                    {% trans "Your message has been sent." %}
+                </div>
+            {% endif %}
+            <input type=submit class="button submit" value="{% trans "Submit" %}"/>
+        </fieldset>
+    </form>
+<script type="text/javascript">
+function submitform()
+{
+  document.myform.submit();
+}
+</script>
+</div>
